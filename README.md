@@ -2,6 +2,8 @@
 
 3D browser game (HTML/CSS/JavaScript + Three.js) for 2 players, turn based: Earth vs Mars.
 
+Estado: version en espanol con defensa matematica por turnos.
+
 ## Included in v1
 - Sun + Earth + Mars rendered in 3D.
 - Visible orbital trajectories with different radii/speeds.
