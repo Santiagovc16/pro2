@@ -1,0 +1,111 @@
+:root {
+  --bg-a: #f8fbff;
+  --bg-b: #dde9fb;
+  --panel: rgba(255, 255, 255, 0.72);
+  --text: #1d2430;
+  --muted: #5f6774;
+  --accent: #0f64ff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 15% 15%, var(--bg-a), var(--bg-b));
+}
+
+#app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+}
+
+#hud {
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(17, 100, 255, 0.12);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+h1 { margin: 0; font-size: 1.25rem; }
+#turn-info { color: var(--muted); font-size: 0.95rem; }
+
+.panel {
+  background: var(--panel);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 24px rgba(18, 38, 67, 0.08);
+  padding: 10px;
+}
+
+.actions { display: grid; gap: 8px; }
+
+button {
+  border: 1px solid #d6e1f8;
+  background: #fff;
+  border-radius: 10px;
+  padding: 9px;
+  cursor: pointer;
+}
+
+button.primary {
+  background: linear-gradient(130deg, #0f64ff, #3f8bff);
+  color: #fff;
+  border: 0;
+}
+
+#log {
+  flex: 1;
+  overflow-y: auto;
+  font-size: 0.87rem;
+  color: var(--muted);
+}
+
+#log p { margin: 0 0 6px; }
+canvas { display: block; }
+
+.defensa-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(16, 24, 40, 0.38);
+  display: grid;
+  place-items: center;
+  z-index: 20;
+}
+
+.defensa-modal.oculto { display: none; }
+
+.defensa-card {
+  width: min(92vw, 420px);
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 18px 40px rgba(14, 22, 40, 0.24);
+}
+
+.defensa-card h2 { margin: 0 0 8px; }
+.defensa-card p { margin: 0 0 8px; }
+.pregunta { font-size: 1.28rem; color: #0b4bd1; }
+
+.defensa-fila {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+#defensa-respuesta {
+  border: 1px solid #d6e1f8;
+  border-radius: 10px;
+  padding: 9px;
+  font-size: 1rem;
+}
+
+@media (max-width: 920px) {
+  #app { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+  #hud { border-right: 0; border-bottom: 1px solid rgba(17, 100, 255, 0.12); }
+}

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Duelo Orbital: Tierra vs Marte</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <aside id="hud">
+        <h1>Duelo Orbital</h1>
+        <div id="turn-info"></div>
+        <div id="planet-stats" class="panel"></div>
+        <div class="panel actions">
+          <button data-action="mine">Minar recursos</button>
+          <button data-action="buildWeapon">Construir arma orbital</button>
+          <button data-action="buildInterceptor">Construir interceptor</button>
+          <button data-action="fireMissile">Lanzar misil</button>
+          <button data-action="fireAsteroid">Lanzar mini asteroide</button>
+          <button data-action="endTurn" class="primary">Finalizar turno</button>
+        </div>
+        <div id="log" class="panel"></div>
+      </aside>
+      <main id="viewport"></main>
+    </div>
+
+    <div id="defensa-modal" class="defensa-modal oculto" aria-live="polite">
+      <div class="defensa-card">
+        <h2>Defensa Planetaria</h2>
+        <p id="defensa-planeta"></p>
+        <p id="defensa-pregunta" class="pregunta"></p>
+        <p id="defensa-tiempo"></p>
+        <div class="defensa-fila">
+          <input id="defensa-respuesta" type="number" step="1" placeholder="Tu respuesta" />
+          <button id="defensa-enviar" class="primary">Defender</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.163.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.163.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
